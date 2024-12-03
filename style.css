@@ -104,9 +104,10 @@ li{
 }
 
 .card img {
-    object-fit: contain;
+    object-fit: cover;
     max-width: 300px;
     border-radius: 42px;
+    height: 350px;
 }
 
 .card {
