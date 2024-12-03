@@ -1,7 +1,7 @@
 //on donne l'url du site à appeller
 fetch('data.json')
     .then((rep) => {
-        
+
         return rep.json()
     })
     .then(donnee => {
@@ -20,58 +20,59 @@ fetch('data.json')
 
 //on boucle sur chaque étape à injecter + sur les sous catégories : ingrédients, étapes
 
-    function affiche(recette){
-        let nom = recette.nom
-        let img = recette.img
-        let niveau = recette.difficulte
-        let duree = recette.tempPreparation
-        let cuisson = recette.tempCuisson
-        let portions = recette.portions
-        let saison = recette.saison
-        let ingredients = recette.ingredients
-        let liste = ""
-        let steps = ""
-        ingredients.forEach(ing => {
-            let quantite = ing.quantite
-            let unite = ing.unite
-            let aliment = ing.aliment
-            liste = `<li>${quantite}${unite}${aliment}</li>`
-        });
-        let etapes = recette.etapes
-        etapes.forEach(step => {
-            let numEtape= step.numeroEtape
-            let descEtape = step.descEtape
-            steps = `<li>${numEtape}${descEtape}</li>`
-        });
+function affiche(recette) {
+    let nom = recette.nom
+    let img = recette.img
+    let niveau = recette.difficulte
+    let duree = recette.tempPreparation
+    let cuisson = recette.tempCuisson
+    let portions = recette.portions
+    let saison = recette.saison
+    let ingredients = recette.ingredients
+    let liste = ""
+    let steps = ""
+    ingredients.forEach(ing => {
+        let quantite = ing.quantite
+        let unite = ing.unite
+        let aliment = ing.aliment
+        liste += `<li>${quantite} ${unite} ${aliment}</li>`
+    });
+    let etapes = recette.etapes
+    etapes.forEach(step => {
+        let numEtape = step.numeroEtape
+        let descEtape = step.descEtape
+        steps += `<li class="etapes">${descEtape}</li>`
+    });
 
-document.querySelector(".containerRecettes").innerHTML +=
+    document.querySelector(".containerRecettes").innerHTML +=
         `
+        <h2>${saison}</h2>
          <div class="card">
                 <h3>${nom}</h3>
-                <ul class="flex">
+                <ul class="flex space w60 nav">
                     <li><span>Difficulté : </span>${niveau}</li>
                     <li><span>Portions : </span>${portions}</li>
                     <li><span>Temps de préparation : </span>${duree}</li>
                     <li><span>Temps de cuisson : </span>${cuisson}</li>
                 </ul>
-                <div class="flex">
-                    <div>
+                <div class="flex space">
+                    <div class="w25 ingredients">
                         <h4>Ingrédients : </h4>
                         <ul>
                         ${liste}
                         </ul>
                     </div>
-                    <div>
+                    <div class="w40">
                         <h4>Etapes : </h4>
                         <ol>
                         ${steps}
                         </ol>
                     </div>
-                    <div>
-                    ${img}
+                    <div class="w30">
+                            <img src="${img}" alt="">
                     </div>
                 </div>
             </div>
         `
-    }
+}
 

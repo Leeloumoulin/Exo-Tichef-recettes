@@ -1,12 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pixelify+Sans:wght@400..700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.search {
+    width: 70%;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.w40 {
+    width: 40%;
+}
+.w25 {
+    width: 25%;
+}
+.w60 {
+    width: 70%;
+}
+
+.navig {
+    width: 100vw;
+    background-color:  #d3d1d1;
+}
+
+.navigation{
+    margin-bottom: 30px;
+    list-style: none;
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+h2{
+    font-family: Josefin Sans;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 25px;
+    color: #FF6F61;
+}
+
+i {
+    color: #FF6F61;
+    position: absolute;
+    margin-left: 145px;
+    margin-top: 15px;
+    z-index: 1;
+}
+
+h3 {
+    color: #FF6F61;
+    font-family: Josefin Sans;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+h1 {
+font-family: Josefin Sans;
+font-size: 24px;
+font-weight: 700;
+color: #FF6F61;
+margin-top: 14px;
+}
+
+span {
+    font-weight: bold;
+}
+ol {
+    list-style: none;
+}
+li{
+    line-height: 22px;
+    font-family: Inter;
+    font-size: 15px;
+    text-align: left;
+}
+
+.etapes {
+    margin: 10px;
+}
+
 .containerRecettes {
     margin: auto;
-    max-width: 1000px;
+    max-width: 1050px;
     width: 100%;
 }
 
@@ -19,6 +104,24 @@
 }
 
 .card img {
-    height: 300px;
     object-fit: contain;
+    max-width: 300px;
+    border-radius: 42px;
+}
+
+.card {
+    margin-bottom: 150px;
+    padding: 28px;
+    border-radius: 19px;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    box-shadow: 0px 0px 4px 0px #828282B5;
+}
+
+.ingredients {
+    padding-left: 20px;
+}
+
+.nav {
+    margin-bottom: 30px;
+    list-style: none;
 }
